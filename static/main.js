@@ -1,4 +1,6 @@
-var socket = io.connect('http://' + document.domain + ':' + location.port);
+const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+
+var socket = io.connect(protocol + document.domain + ':' + location.port);
 let username = "";
 let psk = "";
 
